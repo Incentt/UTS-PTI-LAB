@@ -68,16 +68,16 @@
             <div class="card-body">
                 <h5 class="card-title text-dark mb-4">History</h5>
 
-                    <div id="contentTransaction">
-                         
-                    </div>
-
+                <div id="contentTransaction">
 
                 </div>
 
 
             </div>
+
+
         </div>
+    </div>
     </div>
 
 
@@ -98,16 +98,19 @@
 </style>
 <script>
     
-   // loadSavedContent();
+     loadSavedContent();
     var nameWelcome = localStorage.getItem('welcomeName');
     document.getElementById("welcomeName").innerHTML = `Hello <b>${nameWelcome}!</b>`;
     console.log("w" + nameWelcome);
     document.getElementById("namaPengguna").innerHTML = `${nameWelcome} Balance`;
     document.title = `Welcome ${nameWelcome}`
 
-    document.getElementById("contentTransaction").innerHTML += localStorage.getItem('addedHTML');
-    localStorage.setItem('addedHTML', "");
-    saveChanges();
+    if (localStorage.getItem('addedHTML') != null) {
+        document.getElementById("contentTransaction").innerText += localStorage.getItem('addedHTML');
+        localStorage.setItem('addedHTML', " ");
+    }
+
+     saveChanges();
 
     function hapusData(button) {
 
@@ -152,7 +155,7 @@
 
     function loadSavedContent() {
 
-            document.getElementById("contentTransaction").innerText = localStorage.getItem("savedContent");
+        document.getElementById("contentTransaction").innerText = localStorage.getItem("savedContent");
 
     }
 </script>

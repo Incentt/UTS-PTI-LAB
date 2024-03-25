@@ -113,7 +113,7 @@ function simpenData(name, amount, category) {
             </div>`;
 
     localStorage.setItem('addedHTML', addedHTML);
-    
+    addHistory();
     window.location.href = "mainpage.html";
     
 }
@@ -134,7 +134,7 @@ function simpenData2(name, amount, category) {
             </div>`;
 
     localStorage.setItem('addedHTML', addedHTML);
-    
+    addHistory();
     window.location.href = "mainpage.html";
     
 }
