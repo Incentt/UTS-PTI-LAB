@@ -106,7 +106,7 @@
     document.title = `Welcome ${nameWelcome}`
 
     if (localStorage.getItem('addedHTML') != null) {
-        document.getElementById("contentTransaction").innerText += localStorage.getItem('addedHTML');
+        document.getElementById("contentTransaction").innerHTML += localStorage.getItem('addedHTML');
         localStorage.setItem('addedHTML', " ");
     }
 
@@ -149,13 +149,13 @@
     }
 
     function saveChanges() {
-        var content = document.getElementById("contentTransaction").innerText;
+        var content = document.getElementById("contentTransaction").innerHTML;
         localStorage.setItem("savedContent", content);
     }
 
     function loadSavedContent() {
 
-        document.getElementById("contentTransaction").innerText = localStorage.getItem("savedContent");
+        document.getElementById("contentTransaction").innerHTML = localStorage.getItem("savedContent");
 
     }
 </script>
