@@ -145,12 +145,13 @@
     }
 
     function saveChanges() {
-        var content = document.getElementById("contentTransaction").innerHTML;
+        var content = document.getElementById("contentTransaction").innerText;
         localStorage.setItem("savedContent", content);
     }
 
     function loadSavedContent() {
-            document.getElementById("contentTransaction").innerHTML = localStorage.getItem("savedContent");
+
+            document.getElementById("contentTransaction").innerText = localStorage.getItem("savedContent");
 
     }
 </script>
